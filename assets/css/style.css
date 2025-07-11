@@ -1,0 +1,1678 @@
+@charset "utf-8";
+/*==========================
+common
+==========================*/
+html {
+   
+    font-size: 62.5%;
+}
+
+body {
+    font-family:
+        'Noto Sans JP',
+        League Spartan,
+        Saira,
+        sans-serif;
+    font-style: normal;
+    color: #fff;
+    background-color: #151516;
+    line-height: 1.5;
+}
+
+/* ローディング */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.loading-bar {
+  width: 0%;
+  height: 4px;
+  background: #fff;
+  margin-bottom: 20px;
+  transition: width 0.1s linear;
+}
+
+.loading-text {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* 2枚のカーテン */
+.curtain {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #000;
+  z-index: 9999;
+}
+
+.curtain-top {
+  top: 0;
+}
+
+.curtain-bottom {
+  bottom: 0;
+}
+
+
+
+
+
+
+
+.cursor-stalker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.section_box {
+    padding-bottom: 5rem;
+}
+
+
+
+
+
+
+
+.section_topic {
+    font-family: 'League Spartan';
+    font-weight: 600;
+    font-size: 6rem;
+    line-height: 1.3;
+    letter-spacing: 1.5px;
+    padding-top: 5rem;
+    position: relative;
+  display: inline-block; /* 平行四辺形のサイズを調整しやすくするため */
+  z-index: 1;
+}
+
+.section_topic::before {
+  content: '';
+    position: absolute;
+    left: 18px;
+    bottom: 10px;
+    width: 100%;
+    height: 33px;
+    background: #970e0e;
+    transform: skew(-30deg);
+    z-index: -1;
+}
+
+
+
+
+
+
+.section_jp {
+    font-size: 2rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 2.6px;
+padding-top: 2rem;
+}
+
+@media screen and (max-width:820px) {
+  .section_box {
+    padding: 10% 0 3% 0;
+}
+
+.section_topic {
+    
+    font-size: 5rem;
+    line-height: 1.3;
+    letter-spacing: 1.5px;
+    padding-top: 0rem;
+    position: relative;
+  display: inline-block; /* 平行四辺形のサイズを調整しやすくするため */
+  z-index: 1;
+}
+
+.section_topic::before {
+  content: '';
+    position: absolute;
+    left: 18px;
+    bottom: 10px;
+    width: 100%;
+    height: 25px;
+    background: #970e0e;
+    transform: skew(-30deg);
+    z-index: -1;
+}
+
+.section_jp {
+    font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 2.6px;
+padding-top: 0;
+}
+    
+}
+
+
+.logo {
+    font-family: 'Saira';
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.96px;
+}
+
+@media screen and (max-width:820px) {
+  .logo {
+    font-family: 'Saira';
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.96px;
+}
+}
+
+/*==========================
+header
+==========================*/
+
+
+/* ========== PC用ヘッダー ========== */
+@media screen and (min-width: 821px) {
+.header {
+  margin: 0 auto;
+  padding: 14px 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#logo-nav {
+  display: none;
+}
+
+
+
+.fixed-contact-sp {
+  display: none;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+  }
+
+
+
+.nav_list {
+  position: fixed;
+  top: 2rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 111;
+}
+
+.nav_item {
+  font-family: "League Spartan";
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.25px;
+}
+
+.btn_contact a {
+  position: relative;
+  width: 230px;
+  height: 53px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1.5em;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, rgba(178, 22, 22, 1), rgba(140, 16, 16, 1));
+  font-weight: bold;
+}
+
+.btn_contact a .btn_icon {
+  width: 46px;
+  height: 21px;
+  flex-shrink: 0;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.btn_contact a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: left;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 0;
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+}
+
+.btn_contact a span {
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
+  padding-left: 1rem;
+}
+
+.btn_contact a:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.btn_contact a:hover span {
+  background: linear-gradient(90deg, #ff5858, #f857a6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn_contact a:hover {
+  border: 2px solid #f857a6;
+}
+
+.btn_contact a:hover .btn_icon {
+  filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(1000%) hue-rotate(310deg);
+}
+}
+
+/* ========== SP: max-width 820px ========== */
+@media screen and (max-width: 820px) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 5%;
+    position: relative;
+  }
+
+  .nav h1 {
+  padding: 0.5rem 1.5rem;
+}
+
+.nav {
+  position: fixed; /* fixedにして画面に固定 */
+  top: 0; /* 初期値。JSで動的に更新 */
+  left: 0;
+  width: 100vw;
+  background: #18181A;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 999;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease, top 0.3s ease;
+}
+
+.nav.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 8rem 0 3rem 0;
+  }
+
+ .nav_item {
+  color: #FFF;
+
+font-family: "League Spartan";
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.84px;
+display: flex;
+margin: 0 auto;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.nav.active .nav_item {
+  opacity: 1;
+  transform: translateY(0);
+}
+  .nav_item.btn_contact {
+    display: block;
+    margin-left: 0;
+  }
+
+.header_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* 円の背景 */
+.header_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  position: fixed; /* ← 固定表示にする */
+  top: 17px;        /* 画面の上から20px */
+  right: 20px;      /* 画面の右から20px */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* 円の背景 */
+.header_btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #b21616, #8c1010);
+  z-index: 0;
+}
+
+/* 線そのもの */
+.header_btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  z-index: 1; /* 擬似要素より前に出す */
+}
+
+/* active時の変化（バツ印） */
+.header_btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.header_btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.header_btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+
+
+
+
+  .fixed-contact-sp {
+    display: flex;
+    position: fixed;
+        top: 17px;
+        right: 7rem;
+    background: linear-gradient(90deg, #b21616, #8c1010);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    align-items: center;
+    gap: 10px;
+    z-index: 1100;
+    text-decoration: none;
+    font-family: "League Spartan";
+font-size: 15px;
+
+font-weight: 600;
+
+letter-spacing: 1px;
+    
+  }
+
+  .fixed-contact-sp .btn_icon {
+    width: 35px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1px;
+  }
+
+  .btn_contact {
+    display: none !important;
+  }
+
+
+  
+}
+
+
+
+/*==========================
+main
+==========================*/
+
+
+#fv {
+  position: relative;
+  width: 100vw;
+  height: 91vh;
+  overflow: hidden;
+}
+
+#fv video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#fv .content {
+  position: absolute;
+  z-index: 1;
+  color: #000;
+  font-size: 64px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 3.2px;
+  top: 20%;
+    left: 5%;
+}
+
+.scroll-down {
+  position: absolute;
+  right: 6rem;
+  bottom: 0rem;
+  display: flex;
+  
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+/* テキスト */
+.scroll-text {
+  
+  font-family: "League Spartan";
+  font-size: 18px;
+font-style: normal;
+font-weight: 200;
+line-height: normal;
+letter-spacing: 1px;
+}
+
+/* 線 */
+.scroll-line {
+  position: relative;
+  width: 2px;
+  height: 100px;
+  
+  overflow: hidden;
+}
+
+/* 動く白線（疑似要素） */
+.scroll-line::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  animation: scrollLineAnim 1.5s infinite ease-in-out;
+}
+
+@keyframes scrollLineAnim {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  50% {
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 820px) {
+
+  #fv .content {
+  
+  font-size: 40px;
+
+}
+.scroll-down {
+  position: absolute;
+  right: 2rem;
+  bottom: 0rem;
+  display: flex;
+  
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.scroll-line {
+  position: relative;
+  width: 1px;
+  height: 100px;
+  
+  overflow: hidden;
+}
+
+.scroll-text {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  font-family: "League Spartan";
+  
+}
+
+
+
+}
+
+/* about */
+
+#about {
+  position: relative;
+  width: 100%;
+  
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#about .section_box {
+  padding-left: 10%;
+}
+
+
+
+.about-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgi-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  
+}
+
+
+
+.bgi-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#about > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.about_box {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 10rem;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.about_content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    
+    padding: 10% 5% 0 2%;
+}
+
+.about_title {
+    color: #FFF;
+
+font-family: "Noto Sans JP";
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 64px; /* 160% */
+letter-spacing: 6px;
+   
+
+}
+
+.about_txt {
+    color: #FFF;
+font-family: "Noto Sans JP";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 45px;
+letter-spacing: 1.8px;
+padding-top: 5rem;
+}
+
+
+@media screen and (max-width:820px) {
+  .about_box {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.about_content {
+  width: 90%;
+  padding: 10% 5% 0 10%;
+}
+
+.about_title {
+  font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: 53px; /* 176.667% */
+letter-spacing: 4.5px;
+}
+
+.about_txt {
+  font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 35px;
+letter-spacing: 1.6px;
+padding-top: 12rem;
+}
+
+.bgi-image::after {
+    width: 100%;     /* 横幅いっぱい */
+    height: 100%;     /* 高さは下部30%だけ */
+    top: auto;       /* 上はリセット */
+    bottom: 0;       /* 下に配置 */
+    right: 0;        /* 右端 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  }
+
+
+
+}
+
+
+
+/* company */
+
+#company {
+  
+    
+    
+  background-attachment: scroll; 
+  position: relative;
+  overflow: hidden;
+}
+
+.company-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/company.png") no-repeat center center / cover;
+  background-attachment: scroll;
+  z-index: 0;  /* 背景として一番後ろ */
+}
+
+
+.company_title {
+   color: #FFF;
+
+font-family: "Noto Sans JP";
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 35px;
+letter-spacing: 4px;
+text-align: center;
+padding-block: 6rem;
+}
+
+.company_box {
+   border: 1px solid #FFF;
+   max-width: 852px;
+    height: auto;
+    flex-shrink: 0;
+   padding: 3.4rem;
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto; 
+   margin-bottom: 5rem;
+}
+.company_item {
+    font-size: 16px;
+    font-weight: 500;
+line-height: 45px; /* 250% */
+letter-spacing: 0.9px;
+text-align: center;
+z-index: 1;
+}
+
+@media screen and (max-width:820px) {
+  .company_title {
+    
+font-size: 18px;
+font-style: normal;
+text-align: center;
+line-height: 40px; /* 200% */
+width: 90%;
+margin: 0 auto;
+}
+.company_box {
+   width: 90%;
+}
+
+.company_item {
+    font-size: 14px;
+    line-height: 40px;
+    
+}
+
+}
+
+
+
+/* WORKS */
+#app .section_box {
+  padding-left: 10%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+/* ====================
+ フィルターリスト
+==================== */
+.filter-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 2rem 0 5rem 10%;
+}
+
+.filter-list button {
+  background: #151516;
+  color: #fff;
+  
+  
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  border: 1.5px solid #fff;
+  border-radius: 20px;
+  padding: 6px 20px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.filter-list button.active {
+  background: #fff;
+  color: #151516;
+}
+
+/* ====================
+ グリッドレイアウト（2列×3行）
+==================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 1.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-inline: 10rem;
+}
+
+.grid-item {
+ 
+  padding: 1rem;
+  color: #fff;
+  
+}
+
+.thumbnail {
+  width: 100%;
+  overflow: hidden; /* 回転してはみ出した部分を隠す */
+  margin-bottom: 0.5rem;
+  
+  
+}
+
+.thumbnail-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.thumbnail:hover .thumbnail-img {
+  transform: rotate(3deg) scale(1.05); /* 傾けながら少し拡大 */
+}
+
+
+
+
+
+
+.item-title {
+  font-size: 1.6rem;
+  font-style: normal;
+font-weight: 700;
+line-height: 35px; /* 140% */
+letter-spacing: 2.5px;
+}
+
+.item-category {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1.5px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+  padding: 4px 14px;
+  background-color: transparent;
+  margin-top: 0.5rem;
+}
+
+
+/* ====================
+ ページネーション
+==================== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-block: 20px;
+  gap: 10px;
+}
+
+.pagination button {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 12px 18px;
+  border: 1px solid #fff;
+  background: #151516;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.pagination button.active {
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: #fff;
+  color: #151516;
+}
+
+@media screen and (max-width: 820px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1列 */
+    grid-template-rows: none;   /* 自動行数（4行でも10行でもOK） */
+    padding-inline: 1rem;       /* 余白も調整 */
+  }
+}
+
+
+ 
+/* safe */
+#safe {
+  background-attachment: scroll; 
+  position: relative;
+  overflow: hidden;
+}
+.safe-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/safe.png") no-repeat center center / cover;
+  background-attachment: scroll;
+  z-index: 0;  /* 背景として一番後ろ */
+}
+
+.safe_title {
+    font-size: 26px;
+    line-height: 35px; /* 134.615% */
+letter-spacing: 2.6px;
+text-align: center;
+padding-block: 6rem;
+z-index: 1;
+}
+
+.safe_box {
+   
+   max-width: 700px;
+    height: auto;
+    flex-shrink: 0;
+   padding: 3.4rem;
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto; 
+}
+
+.safe_item {
+    max-width: 638px;
+    font-size: 16px;
+    font-weight: 500;
+line-height: 45px; /* 250% */
+letter-spacing: 0.9px;
+text-align: center;
+z-index: 1;
+}
+
+@media screen and (max-width: 820px) {
+  .safe_title {
+    font-size: 18px;
+font-style: normal;
+text-align: center;
+line-height: 40px; /* 200% */
+width: 90%;
+margin: 0 auto;
+}
+
+.safe_item {
+    max-width: 638px;
+    font-size: 16px;
+    font-weight: 500;
+line-height: 45px; /* 250% */
+letter-spacing: 0.9px;
+text-align: center;
+
+}
+}
+
+#strength {
+ background-color: black;
+    background: url("../images/str_bg.jpg") no-repeat center center / cover;
+}
+
+#strength .section_box {
+  padding-left: 10%;
+}
+
+.str_wrapper {
+    display: flex;           /* 横並び */
+  justify-content: flex-end;
+  
+  gap: 1rem;               /* テキストと画像の余白 */
+  
+    }
+
+.str_box {
+    max-width: 35%;
+    display: flex;
+    flex-direction: column;
+    padding-block: 15rem;
+}
+
+.str_box2 {
+    max-width: 35%;
+    display: flex;
+    flex-direction: column;
+    padding-block: 15rem;
+}
+
+
+.str_title {
+    font-size: 47px;
+    font-weight: 700;
+    letter-spacing: 2.35px;
+    padding-bottom: 7rem;
+}
+
+.str_item {
+    font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 42px; /* 233.333% */
+letter-spacing: 1.8px;
+}
+
+.str_img {
+    width: 50%;
+    height: auto;
+    object-fit: contain; /* 必要に応じて */
+  display: block;
+}
+
+.str_wrapper2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-bottom: 5rem;
+    }
+
+
+  @media screen and (max-width: 820px) {
+
+    .str_wrapper{
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 5rem 0 5rem 10%;
+    }
+
+    .str_wrapper2 {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 2rem 0 8rem;
+    }
+
+    .str_box {
+      max-width: 90%;
+      padding: 0rem;
+    }
+
+    .str_box2 {
+    max-width: 90%;
+    
+    padding : 0 0 0 10%;
+}
+
+    .str_img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* 必要に応じて */
+  display: block;
+}
+
+.str_title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding-bottom: 3rem;
+}
+
+.str_item {
+    font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 35px; /* 233.333% */
+letter-spacing: 1.2px;
+}
+
+}
+
+
+/* trust */
+#trust {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-block: 20rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+
+
+.trust-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+#trust::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%; /* 必要に応じて調整 */
+  height: 100%;
+   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.trust_box {
+  
+  
+  display: flex;
+  align-items: flex-start;
+  padding-left: 5%;
+}
+
+.trust_content {
+  max-width: 42%;
+  z-index: 1;
+}
+
+.trust_content h4 {
+  font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 64px; /* 150% */
+letter-spacing: 6px;
+padding-bottom: 5rem;
+}
+
+.trust_content p {
+  font-size: 16px;
+  font-weight: 500;
+line-height: 42px; 
+letter-spacing: 1.4px;
+  margin-bottom: 3rem;
+}
+
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 3rem;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  
+}
+
+/* 丸背景 */
+.arrow-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #A60F0F;
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* 矢印画像のサイズと動き */
+.arrow-img {
+  width: 10px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* ホバー時のアニメーション */
+.custom-button:hover .arrow-circle {
+  transform: scale(1.5); /* 丸が大きく */
+}
+
+@media screen and (max-width:820px) {
+  .trust_box {
+    width: 90%;
+    padding: 0;
+    
+}
+.trust_content {
+  max-width: 100%;
+  z-index: 1;
+  margin: 0 auto;
+  padding-left: 5%;
+}
+
+}
+
+/* marquee */
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-block: 3.5rem;
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 50s linear infinite; /* 速度を遅くする：50秒 */
+}
+
+.marquee span {
+  font-family: 'Saira';
+  display: inline-block;
+  font-size: 10rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 10px;
+  color: white;
+  padding-right: 5rem; /* 次のspanとの間隔 */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width:820px) {
+ .marquee span {
+ font-size: 64px;
+font-style: normal;
+font-weight: 600;
+line-height: 40px; /* 62.5% */
+letter-spacing: 6.4px;
+  
+}
+
+
+}
+
+/* news */
+#news {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding-inline: 4rem;
+}
+
+.tabs {
+  max-width: 1440px;
+ padding-bottom: 5rem;
+}
+
+.tab-list {
+  display: flex;
+}
+
+.tab-item {
+  font-size: 18px;
+  background-color: #151516;
+  border: solid 1px #FFF;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+.tab-panel {
+  display: none;
+  border-top: solid 1px #fff;
+  border-left: solid 1px #fff;
+}
+
+.tab-item.active {
+  background-color: #fff;
+  color: #2f2f2f;
+  font-weight: bold;
+}
+
+.tab-panel.active {
+  display: block;
+  padding: 3%;
+}
+.tab-panel.active h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tab-content {
+    font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.news-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.news-date {
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  color: #c0c0c0;
+  min-width: 6em; 
+}
+
+.tab-content {
+  margin: 0;
+  font-size: 1.6rem;
+  
+}
+
+@media screen and (max-width:820px) {
+
+  
+ .tab-item {
+  font-size: 15px;
+  background-color: #151516;
+  border: solid 1px #FFF;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  color: #fff;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 2rem;
+}
+
+.news-date {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  color: #c0c0c0;
+  min-width: 6em; 
+}
+
+.tab-content {
+  margin: 0;
+  font-size: 1.5rem;
+  
+}
+
+}
+
+
+
+
+/* access */
+.access_container {
+  display: flex;
+    align-items: center;
+    
+    border-top: 1px solid #fff;
+border-bottom: 1px solid #fff;
+  
+}
+
+.access_info {
+  display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5rem;
+  
+}
+
+.access_left {
+  padding-left: 20%;
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ gap: 1rem;
+}
+
+
+.access_info .label {
+      font-family: "League Spartan";
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: 2.5px;
+
+}
+
+.access_info .text {
+  
+
+letter-spacing: 2.5px;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+}
+
+.access_map {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+}
+
+@media screen and (max-width:820px) {
+     .access_container {
+        display: block;
+        
+        align-items: stretch;
+    }
+
+    .access_info {
+  display:flex;
+  flex-direction: column;
+    gap: 4rem;
+  padding-block: 10%;
+}
+.access_left {
+        padding-left: 10%;
+    }
+
+
+.access_info .label {
+  font-size: 13px;
+}
+
+.access_info .text {
+  font-size: 15px;
+}
+
+.access_map {
+  
+  min-width: 300px;
+  height: 300px;
+}
+}
+
+
+
+
+/*==========================
+footer
+==========================*/
+.footer {
+  
+  color: #fff;
+  padding: 8% 10%;
+  font-size: 14px;
+}
+
+.footer_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* スマホ対応 */
+  gap: 2rem;
+  
+}
+
+.footer_sns {
+  padding: 5rem 0 10rem 0;
+}
+
+
+
+.footer_sns a img {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+}
+
+.footer_list {
+  
+  padding-top: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.footer_list li a {
+  font-family: "League Spartan";
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+}
+
+.footer_copy {
+  font-family: "League Spartan";
+    font-weight: 200;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+
+}
+
+
+@media screen and (max-width:820px) {
+   
+
+    .footer_sns {
+  padding: 3rem 0 9.5rem 0;
+}
+
+    .footer_sns a img {
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+}
+
+.footer_list {
+  
+  padding-top: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+   
+    .footer_list li a {
+      font-family: "League Spartan";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    }
+    .footer_copy {
+    
+    font-size: 12px;
+    letter-spacing: 0.33px;
+    }
+
+
+
+
+    }

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://dhwmall.co.jp/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <!-- ogp -->
+    <meta property="og:url" content="https://dhwmall.co.jp/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="REELIZE">
+    <meta property="og:image" content="">
+    <!-- favicon apple-touch-icon -->
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/images/android-chrome-256x256.png"> -->
+
+    <title>REELIZE</title>
+    
+    <!-- web font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/destyle.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+     
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+</head>
+<body>
+  
+    
+        <header class="header">
+  <h1 class="logo" id="logo-header"><a href="#">REELIZE</a></h1>
+
+  <!-- ハンバーガーボタン -->
+  <button class="header_btn" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<a href="#contact" class="fixed-contact-sp">
+  <img src="assets/images/img_contact.png" alt="mail" class="btn_icon">
+  <span>CONTACT</span>
+</a>
+  <nav class="nav">
+    <div class="logo" id="logo-nav"><a href="#">REELIZE</a></div>
+    <ul class="nav_list">
+      <li class="nav_item"><a href="#">TOP</a></li>
+      <li class="nav_item"><a href="#about">ABOUT</a></li>
+      <li class="nav_item"><a href="#works">WORKS</a></li>
+      <li class="nav_item"><a href="#strength">STRENGTH</a></li>
+      <li class="nav_item"><a href="#news">NEWS</a></li>
+      <li class="nav_item btn_contact">
+        <a href="#contact">
+          <img src="assets/images/img_contact.png" alt="mail" class="btn_icon" />
+          <span>CONTACT</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="loading">
+    <div class="loading-bar"></div>
+    <div class="loading-text">0%</div>
+  </div>
+<div class="curtain curtain-top"></div>
+  <div class="curtain curtain-bottom"></div>
+        <main class="main-content">
+          
+                <section id="fv" class="section section_FV">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/images/FV_video.mp4" type="video/mp4" >
+                            お使いのブラウザは動画をサポートしていません。
+                        </video>
+                        <div class="content">
+                            <h1>映像に、飛躍を。</h1>
+                        </div>
+                        <div class="scroll-down">
+  <span class="scroll-line"></span>
+  <span class="scroll-text">SCROLL DOWN</span>
+</div>
+                        </section>
+                    
+                
+                <section id="about">
+                  <div class="about-background">
+    <div class="bgi-image" style="background-image: url('assets/images/about.jpg');"></div>
+    <div class="bgi-image" style="background-image: url('assets/images/about2.jpg');"></div>
+    <div class="bgi-image" style="background-image: url('assets/images/about3.jpg');"></div>
+ 
+                  <div class="about_box">
+                    
+                    <div class="section_box fadeLeftOnScroll">
+                      
+                      <h2 class="section_topic">ABOUT</h2>
+                      <h3 class="section_jp">私たちの使命</h3>
+                    </div>
+                  
+                     <div class="about_content">
+                        <h4 class="about_title fadeUpOnScroll" id="aboutTitle">映像で、伝わる熱量がある。</h4>
+                          
+                          <p class="about_txt fadeUpOnScroll">
+                            REELIZE（リーライズ）は、ドローン撮影を専門とする映像制作会社です。高精度の空撮技術と、構成から編集まで一貫対応できる体制で、観光・地域プロモーション、企業ブランディングなど多様なニーズに応える空撮映像をご提供します。
+                          </p>
+                        
+                      </div>
+                  </div>
+                  </div>
+                </section>
+
+                <section id="company">
+                  <div class="company-bg scaleOnScroll"></div>
+                    <h2 class="company_title fadeUpOnScroll">多くの企業・自治体にて撮影をさせていただきました。</h2>
+                    <div class="company_box">
+                    <p class="company_item">『鎌倉市 観光PR「風とともに歩く」』『富士見市 商工まつり』『横浜市 国際交流フェス』
+                        『長門町 防災シミュレーション』『香川町 納涼花火大会』『呉市 潮風をたずねて』
+                        『株式会社はやま鉄鋼様PV』『株式会社夢幻モーターズ様PV』『株式会社ASUKAM様PV』
+                         映画『水平線を越えて』ドラマ『月夜に咲く』ドラマ『エキスパート』
+                        『早稲田大学』『東京農業大学』『横浜薬科大学』『北海道大学』 他多数</p>
+                        </div>
+                </section>
+              <!-- Vue3を使用 -->
+<section id="works">
+  <div id="app">
+    <div class="section_box">
+    <h2 class="section_topic">WORKS</h2>
+    <h3 class="section_jp">制作実績</h3>
+</div>
+    <!-- フィルターリスト -->
+<ul class="filter-list">
+  <!-- ✅ 「すべて」も <li> に入れる -->
+  <li>
+    <button @click="selected = ''; currentPage = 1" :class="{ active: selected === '' }">
+      すべて
+    </button>
+  </li>
+
+  <!-- ✅ 各カテゴリ -->
+  <li v-for="cat in categories" :key="cat">
+    <button @click="selected = cat; currentPage = 1" :class="{ active: selected === cat }">
+      {{ cat }}
+    </button>
+  </li>
+</ul>
+
+
+
+    <!-- 絞り込み結果を3x2のグリッドで表示 -->
+    <div class="grid-container">
+  <div v-for="item in paginatedItems" :key="item.title" class="grid-item">
+    <div class="thumbnail">
+      <img :src="item.img" alt="" class="thumbnail-img">
+    </div>
+    <h4 class="item-title">{{ item.title }}</h4>
+    <p class="item-category">{{ item.category }}</p>
+  </div>
+</div>
+
+<div class="pagination">
+  <button
+    v-for="page in totalPages"
+    :key="page"
+    @click="goToPage(page)"
+    :class="{ active: currentPage === page }"
+  >
+    {{ page }}
+  </button>
+</div>
+
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  
+</script>
+
+
+ 
+</section>
+
+
+                <section id="safe">
+                  <div class="safe-bg scaleOnScroll"></div>
+                    <h2 class="safe_title fadeUpOnScroll">国家資格ドローン操縦士による撮影体制</h2>
+                    <div class="safe_box">
+                    <p class="safe_item">REELIZEでは、国土交通省が定める
+                        「無人航空機操縦者技能証明」を取得した
+                        オペレーターが撮影を担当。
+                        国家資格による確かな操縦技術と安全管理体制のもと、
+                        企業PRや観光プロモーションなど、
+                        あらゆる現場で高い信頼を得ています。</p>
+                        </div>
+                </section>
+
+                <section id="strength">
+                  <div class="section_box fadeLeftOnScroll">
+                    <h2 class="section_topic">STRENGTH</h2>
+                    <h3 class="section_jp">最先端ドローンの強み</h3>
+                    </div>
+                    <div class="str_wrapper ">
+
+                      <div class="str_box fadeUpOnScroll">
+                      <h4 class="str_title ">AERIS PRO X9</h4>
+                      <p class="str_item ">最先端の技術で、8K HDR撮影に対応し、
+                          夜景や夕暮れ時でもノイズを最小限に抑えながら、光と色彩のニュアンスを忠実に再現。
+                          被写体を自動で追尾するインテリジェントモードや、高精度GPSによる飛行安定性も兼ね備えており、都市部や観光地といった複雑な環境下でも、安全かつ効率的に撮影が可能です。
+                          特に観光プロモーションや都市ブランディング映像に最適です。</p>
+                      </div>
+                      <img  class="str_img fadeUpScaleOnScroll" src="assets/images/STR1.png" alt="AERIS">
+
+                    </div>
+
+                    <div class="str_wrapper2">
+                    <div class="str_box2 fadeUpOnScroll">
+                    <h4 class="str_title">SKYPIX 550</h4>
+                    <p class="str_item">わずか250g以下のコンパクトボディで、
+                        狭い場所や屋内イベントでもスムーズに飛行可能。
+                        空間の広がりや導線を直感的に伝える映像表現に優れているため、学校・教育施設・商業店舗・展示場・文化施設などのプロモーションに最適です。
+                        特に、人の目線では伝えきれない“空間の魅力”や“流れ”を俯瞰で美しく見せることで、施設紹介動画やリクルート用映像、SNS向けの短尺動画にも幅広く活用いただけます。</p>
+                    </div>
+                    <img class="str_img fadeUpScaleOnScroll" src="assets/images/STR2.png" alt="SKYPIX">
+                    </div>
+                </section>
+
+                <section id="trust">
+  <div class="trust-background">
+    <div class="bg-image" style="background-image: url('assets/images/trust.png');"></div>
+    <div class="bg-image" style="background-image: url('assets/images/trust2.jpg');"></div>
+    <div class="bg-image" style="background-image: url('assets/images/trust3.jpg');"></div>
+  </div>
+  <div class="trust_box">
+    <div class="trust_content">
+      <h4 class="trust_title" id="trustTitle">期待以上の一瞬を、確かな技術で。</h4>
+      <p>
+        撮影現場では、ディレクター・操縦士・カメラマンが密に連携し、緻密なプランニングと即応力であらゆる環境に対応します。<br>
+        撮るだけではなく、「伝える映像」として最適な表現をチームでつくりあげます。<br>
+        必ず期待にお応えいたします。<br>
+        安心してお任せください。
+      </p>
+     <button class="custom-button">
+  無料でお見積り
+  <span class="arrow-circle">
+    <img src="assets/images/arrow.png" alt="→" class="arrow-img" />
+  </span>
+</button>
+    </div>
+  </div>
+  
+
+
+</section>
+<div class="marquee-wrapper">
+  <div class="marquee">
+    <span>BEYOND THE SKY WE CAPTURE THE UNSEEN.&nbsp;</span>
+    <span>BEYOND THE SKY WE CAPTURE THE UNSEEN.&nbsp;</span>
+  </div>
+</div>
+ <section id="news">
+  <div class="section_box fadeLeftOnScroll">
+                    <h2 class="section_topic">NEWS</h2>
+                    <h3 class="section_jp">最新情報</h3>
+                    </div>
+<div class="tabs">
+  <ul class="tab-list">
+    <li class="tab-item active" tabindex="0">お知らせ</li>
+    <li class="tab-item" tabindex="0">実績</li>
+    <li class="tab-item" tabindex="0">コラム</li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-panel active">
+  <div class="news-item">
+    <span class="news-date">2025.07.01</span>
+    <a href="#"><p class="tab-content">【夏季休業のお知らせ】8月10日〜8月15日まで休業いたします。</p></a>
+  </div>
+  <div class="news-item">
+    <span class="news-date">2025.06.25</span>
+    <a href="#"><p class="tab-content">法人向け撮影相談会（オンライン）の受付を開始しました。</p></a>
+  </div>
+  <div class="news-item">
+    <span class="news-date">2025.05.20</span>
+    <a href="#"><p class="tab-content">ドローン空撮サービスが4K HDR対応になりました。</p></a>
+  </div>
+</div>
+
+<div class="tab-panel">
+  <div class="news-item">
+    <span class="news-date">2025.07.03</span>
+    <a href="#"><p class="tab-content">企業ブランディング映像を公開しました。</p></a>
+  </div>
+  <div class="news-item">
+    <span class="news-date">2025.06.25</span>
+    <a href="#"><p class="tab-content">イベント映像を公開しました。</p></a>
+  </div>
+  <div class="news-item">
+    <span class="news-date">2025.06.20</span>
+    <a href="#"><p class="tab-content">企業ブランディング映像を公開しました。</p></a>
+  </div>
+</div>
+
+<div class="tab-panel">
+  <div class="news-item">
+    <span class="news-date">2025.06.03</span>
+    <a href="#"><p class="tab-content">4K空撮の魅力とは？映像に“深み”を出すためのポイント3選</p></a>
+  </div>
+  <div class="news-item">
+    <span class="news-date">2025.04.25</span>
+    <a href="#"><p class="tab-content">映像制作におけるドローン活用の最新トレンド2025</p></a>
+  </div>
+  <div class="news-item">
+    <span class="news-date">2025.02.21</span>
+    <a href="#"><p class="tab-content">ドローン操縦士インタビュー</p></a>
+  </div>
+</div>
+
+  </div>
+</div>
+</section>
+
+            
+            <section class="access">
+                <div class="access_container">
+  <!-- 左：TELと住所 -->
+  <div class="access_info">
+    <div class="access_left">
+    <p class="label">TEL</p>
+    <p class="text">035-5721-3380</p>
+    </div>
+
+    <div class="access_left">
+    <p class="label">ACCESS</p>
+    <p class="text">
+      東京都目黒区中目黒2-15-36<br>
+      Vision中目黒ビル 1F
+    </p>
+    </div>
+  </div>
+
+  <!-- 右：Google Map -->
+              <div class="access_map">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.564043350164!2d139.70281177648016!3d35.638472532320414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b3be1173a29%3A0x7825dbff875b088d!2z44CSMTUzLTAwNjEg5p2x5Lqs6YO955uu6buS5Yy65Lit55uu6buS77yS5LiB55uu77yW!5e0!3m2!1sja!2sjp!4v1751279255285!5m2!1sja!2sjp" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+
+            </section>
+        </main>
+
+        
+        <footer class="footer">
+  <div class="footer_inner">
+    
+    <!-- ロゴ・SNS -->
+    <div class="footer_top">
+      <h1 class="logo" id="logo-footer">REELIZE</h1>
+      <div class="footer_sns">
+        <a href="#" aria-label="X (旧T witter)">
+          <img src="assets/images/X.png" alt="Xロゴ">
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="assets/images/instagram.png" alt="Instagramロゴ">
+        </a>
+      </div>
+      <p class="footer_copy">© REELIZE Inc. All rights reserved.</p>
+    </div>
+
+    <!-- ナビゲーション -->
+    <nav class="footer_nav" aria-label="フッターナビゲーション">
+      <ul class="footer_list">
+        <li><a href="#top">TOP</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#works">WORKS</a></li>
+        <li><a href="#strength">STRENGTH</a></li>
+        <li><a href="#news">NEWS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+
+   
+    
+
+  </div>
+</footer>
+
+    
+<div class="cursor-stalker"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
