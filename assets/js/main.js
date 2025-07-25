@@ -97,7 +97,7 @@ navItems.forEach(item => {
 
 // header　ロゴ
 {
-  const logoIds = ['logo-header', 'logo-footer' ,'logo-nav'];
+  const logoIds = ['logo-header', 'logo-footer', 'logo-nav'];
   logoIds.forEach(id => {
     const el = document.getElementById(id);
     if (el) {
@@ -128,7 +128,7 @@ navItems.forEach(item => {
   const title = document.getElementById('trustTitle');
   const text = title.textContent;
 
-  
+
   const highlighted = text.replace('瞬', '<span style="color: #E51515;">瞬</span>');
 
   title.innerHTML = highlighted;
@@ -159,77 +159,77 @@ gsap.to(split.chars, {
 // works
 const { createApp, ref, computed } = Vue;
 
-  createApp({
-    setup() {
-      const selected = ref('');
-      const currentPage = ref(1);
-      const itemsPerPage = 6;
+createApp({
+  setup() {
+    const selected = ref('');
+    const currentPage = ref(1);
+    const itemsPerPage = 6;
 
-      const items = ref([
-        { title: '株式会社夢幻モーターズ様', category: '企業PV', img: 'assets/images/works1.jpg' },
-        { title: '横浜市観光プロモーション課様', category: 'イベント', img: 'assets/images/works2.jpg' },
-        { title: '『水平線を越えて』撮影協力', category: '映画・ドラマ', img: 'assets/images/works3.jpg' },
-        { title: '呉市観光課様', category: 'イベント', img: 'assets/images/works4.jpg' },
-        { title: '『光のあとで』撮影協力', category: 'イベント', img: 'assets/images/works5.jpg' },
-        { title: '株式会社はやま鉄鋼様', category: '企業PV', img: 'assets/images/works6.jpg' },
-        { title: '株式会社ASUKAM様', category: '企業PV', img: 'assets/images/works7.jpg' },
-        { title: '香川町 納涼花火大会', category: 'イベント', img: 'assets/images/works8.jpg' },
-        { title: '『エキスパート』撮影協力', category: '映画・ドラマ', img: 'assets/images/works9.jpg' },
-        { title: '観光課様', category: 'イベント', img: 'assets/images/works10.jpg' },
-        { title: '『月夜に咲く』撮影協力', category: 'イベント', img: 'assets/images/works11.jpg' },
-        { title: '株式会社ASUKAM11様', category: '企業PV', img: 'assets/images/works12.jpg' },
-        // さらに件数を増やしてもOK！
-      ]);
+    const items = ref([
+      { title: '株式会社夢幻モーターズ様', category: '企業PV', img: 'assets/images/works1.jpg' },
+      { title: '横浜市観光プロモーション課様', category: 'イベント', img: 'assets/images/works2.jpg' },
+      { title: '『水平線を越えて』撮影協力', category: '映画・ドラマ', img: 'assets/images/works3.jpg' },
+      { title: '呉市観光課様', category: 'イベント', img: 'assets/images/works4.jpg' },
+      { title: '『光のあとで』撮影協力', category: 'イベント', img: 'assets/images/works5.jpg' },
+      { title: '株式会社はやま鉄鋼様', category: '企業PV', img: 'assets/images/works6.jpg' },
+      { title: '株式会社ASUKAM様', category: '企業PV', img: 'assets/images/works7.jpg' },
+      { title: '香川町 納涼花火大会', category: 'イベント', img: 'assets/images/works8.jpg' },
+      { title: '『エキスパート』撮影協力', category: '映画・ドラマ', img: 'assets/images/works9.jpg' },
+      { title: '長門町 防災シミュレーション', category: 'イベント', img: 'assets/images/works10.jpg' },
+      { title: '『夕闇に咲く』撮影協力', category: 'イベント', img: 'assets/images/works11.jpg' },
+      { title: '株式会社HARU様', category: '企業PV', img: 'assets/images/works12.jpg' },
+      // さらに件数を増やしてもOK！
+    ]);
 
-      const categories = computed(() => {
-  return [...new Set(items.value.map(i => i.category))];
-});
-
-      const filteredItems = computed(() =>
-        selected.value
-          ? items.value.filter(i => i.category === selected.value)
-          : items.value
-      );
-
-      const totalPages = computed(() =>
-        Math.ceil(filteredItems.value.length / itemsPerPage)
-      );
-
-      const paginatedItems = computed(() => {
-        const start = (currentPage.value - 1) * itemsPerPage;
-        return filteredItems.value.slice(start, start + itemsPerPage);
-      });
-
-      const goToPage = (page) => {
-        currentPage.value = page;
-      };
-
-      return {
-        selected,
-        currentPage,
-        items,
-        categories,
-        filteredItems,
-        paginatedItems,
-        totalPages,
-        goToPage,
-      };
-    }
-  }).mount('#app');
-
-
-
-
-
-
-$(function() {
-    let tabs = $(".tab");
-    $(".tab").on("click", function() {
-        $(".active").removeClass("active");
-        $(this).addClass("active");
-        const index = tabs.index(this);
-        $(".content").removeClass("show").eq(index).addClass("show");
+    const categories = computed(() => {
+      return [...new Set(items.value.map(i => i.category))];
     });
+
+    const filteredItems = computed(() =>
+      selected.value
+        ? items.value.filter(i => i.category === selected.value)
+        : items.value
+    );
+
+    const totalPages = computed(() =>
+      Math.ceil(filteredItems.value.length / itemsPerPage)
+    );
+
+    const paginatedItems = computed(() => {
+      const start = (currentPage.value - 1) * itemsPerPage;
+      return filteredItems.value.slice(start, start + itemsPerPage);
+    });
+
+    const goToPage = (page) => {
+      currentPage.value = page;
+    };
+
+    return {
+      selected,
+      currentPage,
+      items,
+      categories,
+      filteredItems,
+      paginatedItems,
+      totalPages,
+      goToPage,
+    };
+  }
+}).mount('#app');
+
+
+
+
+
+
+$(function () {
+  let tabs = $(".tab");
+  $(".tab").on("click", function () {
+    $(".active").removeClass("active");
+    $(this).addClass("active");
+    const index = tabs.index(this);
+    $(".content").removeClass("show").eq(index).addClass("show");
+  });
 });
 
 
@@ -262,6 +262,15 @@ tabItems.forEach((tabItem) => {
 // マウスストーカー
 const stalker = document.querySelector(".cursor-stalker");
 
+document.addEventListener("mousemove", (e) => {
+  stalker.style.top = `${e.clientY}px`;
+  stalker.style.left = `${e.clientX}px`;
+});
+
+// マウスストーカー（PCのみ実行）
+if (window.innerWidth > 820) {
+  const stalker = document.querySelector(".cursor-stalker");
+
   document.addEventListener("mousemove", (e) => {
     stalker.style.top = `${e.clientY}px`;
     stalker.style.left = `${e.clientX}px`;
@@ -281,44 +290,46 @@ const stalker = document.querySelector(".cursor-stalker");
       stalker.style.height = "40px";
     });
   });
+}
 
 
-  // trust
-  document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll(".bg-image");
-    let current = 0;
 
-    function showNextImage() {
-      images[current].style.opacity = 0;
-      current = (current + 1) % images.length;
-      images[current].style.opacity = 1;
-    }
+// trust
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".bg-image");
+  let current = 0;
 
-    // 最初の画像を表示
+  function showNextImage() {
+    images[current].style.opacity = 0;
+    current = (current + 1) % images.length;
     images[current].style.opacity = 1;
+  }
 
-    // 5秒ごとに切り替え
-    setInterval(showNextImage, 5000);
-  });
+  // 最初の画像を表示
+  images[current].style.opacity = 1;
+
+  // 5秒ごとに切り替え
+  setInterval(showNextImage, 5000);
+});
 
 
- // about
-  document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll(".bgi-image");
-    let current = 0;
+// about
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".bgi-image");
+  let current = 0;
 
-    function showNextImage() {
-      images[current].style.opacity = 0;
-      current = (current + 1) % images.length;
-      images[current].style.opacity = 1;
-    }
-
-    // 最初の画像を表示
+  function showNextImage() {
+    images[current].style.opacity = 0;
+    current = (current + 1) % images.length;
     images[current].style.opacity = 1;
+  }
 
-    // 5秒ごとに切り替え
-    setInterval(showNextImage, 5000);
-  });
+  // 最初の画像を表示
+  images[current].style.opacity = 1;
+
+  // 5秒ごとに切り替え
+  setInterval(showNextImage, 5000);
+});
 
 
 
